@@ -1,0 +1,26 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::amazon-connect-voicemail-vo-audiorecordingsbucket-z3v6jf3t44e7/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "transcribe:GetTranscriptionJob",
+                "connect:DescribeQueue",
+                "connect:ListQueues",
+                "dynamodb:GetShardIterator",
+                "connect:StartTaskContact",
+                "dynamodb:Query",
+                "dynamodb:DescribeStream",
+                "dynamodb:GetRecords"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
