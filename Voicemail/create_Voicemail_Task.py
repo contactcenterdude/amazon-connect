@@ -117,7 +117,7 @@ def lambda_handler(event, context):
     region_name="us-east-1"
     
     # Amazon Connect InstanceId
-    InstanceId="717ab265-dd50-476b-976c-0ce5fac38807"
+    InstanceId="818ab265-dd50-476b-446c-0ce5fac38807"
     
     # FlowId of SendTask flow 
     ContactFlowId='5b67729d-21e7-4d3c-8a28-c96f881aa1a1'
