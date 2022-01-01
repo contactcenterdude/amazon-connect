@@ -51,3 +51,8 @@ Or figure it out yourself.
 <li>https://www.maximtsvetov.com/2021/09/how-to-initiate-task-from-ivr-in-amazon.html</li>
 </ul>
 <br>
+<h3>Export Users powershell</h3>
+</ul>
+<li>https://github.com/maximtsvetov/amazon-connect/blob/main/Export-Users-powershell/export-users.ps1</li>
+</ul>
+<br>
