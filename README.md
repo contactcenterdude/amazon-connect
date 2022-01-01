@@ -36,4 +36,18 @@ Or figure it out yourself.
 <li>https://www.maximtsvetov.com/2021/09/estimated-wait-time-in-amazon-connect.html</li>
 </ul>
 <br>
-
+<h3>Send Email from IVR</h3>
+</ul>
+<li>https://www.maximtsvetov.com/2021/09/how-to-send-email-from-ivr-in-amazon.html</li>
+</ul>
+<br>
+<h3>Send SMS from IVR</h3>
+</ul>
+<li>https://www.maximtsvetov.com/2021/09/how-to-send-sms-from-ivr-in-amazon.html</li>
+</ul>
+<br>
+<h3>Initiate Task from IVR</h3>
+</ul>
+<li>https://www.maximtsvetov.com/2021/09/how-to-initiate-task-from-ivr-in-amazon.html</li>
+</ul>
+<br>
