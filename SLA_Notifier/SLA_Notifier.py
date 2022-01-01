@@ -154,7 +154,6 @@ def lambda_handler(event, context):
     # Subject for EMail notifications
     Subject='SLA Notifier'
 
-
     data = dump_table('SLA_Notifier')
     
     for item in data:
