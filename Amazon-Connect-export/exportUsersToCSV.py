@@ -59,7 +59,6 @@ def lambda_handler(event, context):
 	now = datetime.now()
 	dt_string = now.strftime("%Y_%m_%d__%H_%M_%S")
 	
-	
 	#Headers for our CSV-file
 	headers="id,username,firstname,lastname,email,phonetype,autoaccept,acw_timeout,desk_number,security_profiles,hierarchy_group_name,routing_profile_name,routing_profile_concurrency,routing_profile_outbound_queue_name,routing_profile_details_list"+"\r\n"
 	
