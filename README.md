@@ -31,3 +31,9 @@ Or figure it out yourself.
 <li>https://www.maximtsvetov.com/2021/12/voicemail-in-amazon-connect-part-2.html</li>
 </ul>
 <br>
+<h3>Estimated Wait Time</h3>
+</ul>
+<li>https://www.maximtsvetov.com/2021/09/estimated-wait-time-in-amazon-connect.html</li>
+</ul>
+<br>
+
