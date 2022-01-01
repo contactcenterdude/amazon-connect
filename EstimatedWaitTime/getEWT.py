@@ -15,17 +15,20 @@ def lambda_handler(event, context):
     else:
         statInterval=15
     
-
+    # getting Channel info from contact details
     channel=event['Details']['ContactData']['Channel']
+    
+    # getting Queue ARN from contact details
     queueARN=event['Details']['ContactData']['Queue']['ARN']
     queueID = queueARN[-36:]
     
+    # getting Instance ARN from contact details
     InstanceARN=event['Details']['ContactData']['InstanceARN']
     InstanceId=InstanceARN[-36:]
     
     now = datetime.now()
     end=ceil_dt(now, timedelta(minutes=5))
-
+    
     start = end - timedelta(hours=0, minutes=int(statInterval))
 
     client = boto3.client('connect')    
