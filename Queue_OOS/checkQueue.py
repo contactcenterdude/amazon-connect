@@ -3,7 +3,6 @@ import boto3
 
 def lambda_handler(event, context):
     
-
     QueueARN=event['Details']['ContactData']['Queue']['ARN']
     QueueID=QueueARN[-36:]
        
