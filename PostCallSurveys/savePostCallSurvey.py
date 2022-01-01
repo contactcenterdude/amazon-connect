@@ -14,8 +14,7 @@ def lambda_handler(event, context):
     
     current_date =datetime.now()
     curren_date_string=current_date.strftime("%Y-%m-%d %H:%M:%S")
-    
-    #answer="1"
+   
     
     answer=event['Details']['ContactData']['Attributes']['answer']
     
