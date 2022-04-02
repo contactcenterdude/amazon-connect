@@ -56,3 +56,8 @@ Or figure it out yourself.
 <li>https://www.maximtsvetov.com/2021/08/export-users-from-amazon-connect-to-csv.html</li>
 </ul>
 <br>
+<h3>Export Users and Queues to CSV with Lambda</h3>
+</ul>
+<li>https://www.maximtsvetov.com/2022/01/export-users-and-queues-to-csv-file-in.html</li>
+</ul>
+<br>
