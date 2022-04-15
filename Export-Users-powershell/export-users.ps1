@@ -45,10 +45,8 @@ Foreach ($i in $user_id_list)
   }
  
 
-
     
   ###Prepare CSV
-
   $user_description=$user_info.id+','+$user_info.username+','+$user_info.IdentityInfo.Email+','+$user_info.IdentityInfo.FirstName+','+  $user_info.IdentityInfo.LastName
   $user_description=$user_description+','+$user_info.PhoneConfig.PhoneType.Value+','+$user_info.PhoneConfig.DeskPhoneNumber+','+$user_info.PhoneConfig.AutoAccept+','+$user_info.PhoneConfig.AfterContactWorkTimeLimit
   $user_description=$user_description+','+$routing_profile.Name+','+$user_hierarchy.Name+','+$user_roles.Substring(1)
