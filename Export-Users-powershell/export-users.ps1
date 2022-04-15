@@ -10,7 +10,7 @@ $user_id_list = Get-CONNUserList -InstanceId $instance_id| Select-Object -First 
 $security_profiles_list=Get-CONNSecurityProfileList -InstanceId $instance_id | Select-Object @('Id','Name')
 
 
-#Path to CSV file with exported info
+###Path to CSV file with exported info
 $ExportPath = "c:\Temp\AWS_Connect_users.csv"
 
 
