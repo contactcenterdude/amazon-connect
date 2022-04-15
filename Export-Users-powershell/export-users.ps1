@@ -1,5 +1,5 @@
 #Enter InstanceID of your Amazon Connect
-$instance_id="717ab265-dd50-476b-976c-0ce5fac38807"
+$instance_id="715ab265-dd70-476b-876c-0ce5fa838877"
 
 
 #Export full list of UserIDs
