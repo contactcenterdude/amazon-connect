@@ -1,1 +1,354 @@
-{"start":"9417811e-e21b-44d2-a04c-f7d14d4bf1e9","version":"1","blocks":[{"id":"b27655b1-5657-4ece-8e9e-5040a753d90c","branches":[{"condition":"Success","transition":"e506ab14-9840-4c8b-bc69-d8d19087767f"}],"parameters":[{"name":"AudioPrompt","value":"arn:aws:connect:us-east-1:734805743552:instance/717ab265-dd50-476b-976c-0ce5fac38807/prompt/f40cbc4b-7063-493b-9ec6-63e3b5655058"}],"metadata":{"position":{"x":903,"y":53.78690079727112},"useDynamic":false,"promptName":"Beep.wav"},"type":"PlayPrompt"},{"id":"e506ab14-9840-4c8b-bc69-d8d19087767f","branches":[{"condition":"Error","transition":"60e6370e-706a-42f7-a9e2-1dad230237c1"},{"condition":"Success","transition":"80e0e31e-e07d-4d50-a8da-e309d611ab80"}],"parameters":[{"name":"MediaStreamTypes","value":"Audio"},{"name":"Track","value":"FromCustomer"}],"metadata":{"position":{"x":1235,"y":36.78690079727112},"fromCustomer":true,"toCustomer":false},"type":"StartMediaStreaming"},{"id":"60e6370e-706a-42f7-a9e2-1dad230237c1","branches":[{"condition":"Error","transition":"80e0e31e-e07d-4d50-a8da-e309d611ab80"},{"condition":"Success","transition":"80e0e31e-e07d-4d50-a8da-e309d611ab80"}],"parameters":[{"name":"Attribute","value":"failure","key":"startStreamingAudioStatus"}],"metadata":{"position":{"x":1531,"y":293.78690079727113},"dynamicParams":[]},"type":"SetAttributes"},{"id":"80e0e31e-e07d-4d50-a8da-e309d611ab80","branches":[{"condition":"Error","transition":"a25cd2a1-5d04-4fcf-9297-0d3d3e7ca1f8"},{"condition":"Timeout","transition":"a25cd2a1-5d04-4fcf-9297-0d3d3e7ca1f8"},{"condition":"NoMatch","transition":"a25cd2a1-5d04-4fcf-9297-0d3d3e7ca1f8"}],"parameters":[{"name":"Text","value":"<speak></speak>"},{"name":"TextToSpeechType","value":"ssml"},{"name":"MaxDigits","value":"1"},{"name":"Timeout","value":"60"}],"metadata":{"position":{"x":1758,"y":19.786900797271123},"conditionMetadata":[],"useDynamic":false,"useDynamicLexBotArn":false},"target":"Digits","type":"GetUserInput"},{"id":"a25cd2a1-5d04-4fcf-9297-0d3d3e7ca1f8","branches":[{"condition":"Error","transition":"4f33a6c2-04e2-49ed-b801-91764f578156"},{"condition":"Success","transition":"4f33a6c2-04e2-49ed-b801-91764f578156"}],"parameters":[{"name":"MediaStreamTypes","value":"Audio"},{"name":"Track","value":"FromCustomer"},{"name":"Track","value":"ToCustomer"}],"metadata":{"position":{"x":2042,"y":244.78690079727113}},"type":"StopMediaStreaming"},{"id":"4f33a6c2-04e2-49ed-b801-91764f578156","branches":[],"parameters":[],"metadata":{"position":{"x":2271,"y":96.78690079727113}},"type":"Disconnect"},{"id":"f18ffe36-2e31-413c-be2e-c885dd82d463","branches":[{"condition":"Success","transition":"b27655b1-5657-4ece-8e9e-5040a753d90c"}],"parameters":[{"name":"Text","value":"Please leave a message after the beep. You have 60 seconds"},{"name":"TextToSpeechType","value":"text"}],"metadata":{"position":{"x":582,"y":54.78690079727112},"useDynamic":false},"type":"PlayPrompt"},{"id":"fe6ba374-1155-4d2c-b1cc-420503b0bcbf","branches":[],"parameters":[],"metadata":{"position":{"x":647,"y":314}},"type":"Disconnect"},{"id":"9417811e-e21b-44d2-a04c-f7d14d4bf1e9","branches":[{"condition":"Error","transition":"fe6ba374-1155-4d2c-b1cc-420503b0bcbf"},{"condition":"Success","transition":"72878008-8961-4788-a942-f8ae3f7ea9da"}],"parameters":[{"name":"FunctionArn","value":"arn:aws:lambda:us-east-1:734805743552:function:Amazon-Connect-Voicemail--GetAgentByExtensionLambd-ZAODgmF92llA"},{"name":"TimeLimit","value":"8"},{"name":"Parameter","value":"extensionNumber","key":"extensionNumber","namespace":"User Defined"}],"metadata":{"position":{"x":65,"y":203.82515423690728},"dynamicMetadata":{"extensionNumber":true},"useDynamic":false},"type":"InvokeExternalResource","target":"Lambda"},{"id":"72878008-8961-4788-a942-f8ae3f7ea9da","branches":[{"condition":"Error","transition":"fe6ba374-1155-4d2c-b1cc-420503b0bcbf"},{"condition":"Success","transition":"f18ffe36-2e31-413c-be2e-c885dd82d463"}],"parameters":[{"name":"Attribute","value":"agentId","key":"agentId","namespace":"External"},{"name":"Attribute","value":"transcribeVoicemail","key":"transcribeVoicemail","namespace":"External"},{"name":"Attribute","value":"saveCallRecording","key":"saveCallRecording","namespace":"External"},{"name":"Attribute","value":"agentName","key":"agentName","namespace":"External"},{"name":"Attribute","value":"encryptVoicemail","key":"encryptVoicemail","namespace":"External"},{"name":"Attribute","value":"transferMessage","key":"transferMessage","namespace":"External"}],"metadata":{"position":{"x":324,"y":148},"dynamicParams":["agentId","transcribeVoicemail","saveCallRecording","agentName","encryptVoicemail","transferMessage"]},"type":"SetAttributes"}],"metadata":{"entryPointPosition":{"x":15,"y":24.825154236907274},"snapToGrid":false,"name":"Transfer_to_VM","status":"published","hash":"19c21bbc74431f0e7fd2f9cfba5583196bc4e1052e0cb26e258641d04441f188"},"settings":{"inputParameters":[],"outputParameters":[],"branches":[{"displayName":"Success","referenceName":"Success","description":""},{"displayName":"Error","referenceName":"Error","description":""}]}}
+{
+  "start": "9417811e-e21b-44d2-a04c-f7d14d4bf1e9",
+  "version": "1",
+  "blocks": [
+    {
+      "id": "b27655b1-5657-4ece-8e9e-5040a753d90c",
+      "branches": [
+        {
+          "condition": "Success",
+          "transition": "e506ab14-9840-4c8b-bc69-d8d19087767f"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "AudioPrompt",
+          "value": "arn:aws:connect:us-east-1:734805743552:instance/717ab265-dd50-476b-976c-0ce5fac38807/prompt/f40cbc4b-7063-493b-9ec6-63e3b5655058"
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 903,
+          "y": 53.78690079727112
+        },
+        "useDynamic": false,
+        "promptName": "Beep.wav"
+      },
+      "type": "PlayPrompt"
+    },
+    {
+      "id": "e506ab14-9840-4c8b-bc69-d8d19087767f",
+      "branches": [
+        {
+          "condition": "Error",
+          "transition": "60e6370e-706a-42f7-a9e2-1dad230237c1"
+        },
+        {
+          "condition": "Success",
+          "transition": "80e0e31e-e07d-4d50-a8da-e309d611ab80"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "MediaStreamTypes",
+          "value": "Audio"
+        },
+        {
+          "name": "Track",
+          "value": "FromCustomer"
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 1235,
+          "y": 36.78690079727112
+        },
+        "fromCustomer": true,
+        "toCustomer": false
+      },
+      "type": "StartMediaStreaming"
+    },
+    {
+      "id": "60e6370e-706a-42f7-a9e2-1dad230237c1",
+      "branches": [
+        {
+          "condition": "Error",
+          "transition": "80e0e31e-e07d-4d50-a8da-e309d611ab80"
+        },
+        {
+          "condition": "Success",
+          "transition": "80e0e31e-e07d-4d50-a8da-e309d611ab80"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Attribute",
+          "value": "failure",
+          "key": "startStreamingAudioStatus"
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 1531,
+          "y": 293.78690079727113
+        },
+        "dynamicParams": []
+      },
+      "type": "SetAttributes"
+    },
+    {
+      "id": "80e0e31e-e07d-4d50-a8da-e309d611ab80",
+      "branches": [
+        {
+          "condition": "Error",
+          "transition": "a25cd2a1-5d04-4fcf-9297-0d3d3e7ca1f8"
+        },
+        {
+          "condition": "Timeout",
+          "transition": "a25cd2a1-5d04-4fcf-9297-0d3d3e7ca1f8"
+        },
+        {
+          "condition": "NoMatch",
+          "transition": "a25cd2a1-5d04-4fcf-9297-0d3d3e7ca1f8"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Text",
+          "value": "<speak></speak>"
+        },
+        {
+          "name": "TextToSpeechType",
+          "value": "ssml"
+        },
+        {
+          "name": "MaxDigits",
+          "value": "1"
+        },
+        {
+          "name": "Timeout",
+          "value": "60"
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 1758,
+          "y": 19.786900797271123
+        },
+        "conditionMetadata": [],
+        "useDynamic": false,
+        "useDynamicLexBotArn": false
+      },
+      "target": "Digits",
+      "type": "GetUserInput"
+    },
+    {
+      "id": "a25cd2a1-5d04-4fcf-9297-0d3d3e7ca1f8",
+      "branches": [
+        {
+          "condition": "Error",
+          "transition": "4f33a6c2-04e2-49ed-b801-91764f578156"
+        },
+        {
+          "condition": "Success",
+          "transition": "4f33a6c2-04e2-49ed-b801-91764f578156"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "MediaStreamTypes",
+          "value": "Audio"
+        },
+        {
+          "name": "Track",
+          "value": "FromCustomer"
+        },
+        {
+          "name": "Track",
+          "value": "ToCustomer"
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 2042,
+          "y": 244.78690079727113
+        }
+      },
+      "type": "StopMediaStreaming"
+    },
+    {
+      "id": "4f33a6c2-04e2-49ed-b801-91764f578156",
+      "branches": [],
+      "parameters": [],
+      "metadata": {
+        "position": {
+          "x": 2271,
+          "y": 96.78690079727113
+        }
+      },
+      "type": "Disconnect"
+    },
+    {
+      "id": "f18ffe36-2e31-413c-be2e-c885dd82d463",
+      "branches": [
+        {
+          "condition": "Success",
+          "transition": "b27655b1-5657-4ece-8e9e-5040a753d90c"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Text",
+          "value": "Please leave a message after the beep. You have 60 seconds"
+        },
+        {
+          "name": "TextToSpeechType",
+          "value": "text"
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 582,
+          "y": 54.78690079727112
+        },
+        "useDynamic": false
+      },
+      "type": "PlayPrompt"
+    },
+    {
+      "id": "fe6ba374-1155-4d2c-b1cc-420503b0bcbf",
+      "branches": [],
+      "parameters": [],
+      "metadata": {
+        "position": {
+          "x": 647,
+          "y": 314
+        }
+      },
+      "type": "Disconnect"
+    },
+    {
+      "id": "9417811e-e21b-44d2-a04c-f7d14d4bf1e9",
+      "branches": [
+        {
+          "condition": "Error",
+          "transition": "fe6ba374-1155-4d2c-b1cc-420503b0bcbf"
+        },
+        {
+          "condition": "Success",
+          "transition": "72878008-8961-4788-a942-f8ae3f7ea9da"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "FunctionArn",
+          "value": "arn:aws:lambda:us-east-1:734805743552:function:Amazon-Connect-Voicemail--GetAgentByExtensionLambd-ZAODgmF92llA"
+        },
+        {
+          "name": "TimeLimit",
+          "value": "8"
+        },
+        {
+          "name": "Parameter",
+          "value": "extensionNumber",
+          "key": "extensionNumber",
+          "namespace": "User Defined"
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 65,
+          "y": 203.82515423690728
+        },
+        "dynamicMetadata": {
+          "extensionNumber": true
+        },
+        "useDynamic": false
+      },
+      "type": "InvokeExternalResource",
+      "target": "Lambda"
+    },
+    {
+      "id": "72878008-8961-4788-a942-f8ae3f7ea9da",
+      "branches": [
+        {
+          "condition": "Error",
+          "transition": "fe6ba374-1155-4d2c-b1cc-420503b0bcbf"
+        },
+        {
+          "condition": "Success",
+          "transition": "f18ffe36-2e31-413c-be2e-c885dd82d463"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "Attribute",
+          "value": "agentId",
+          "key": "agentId",
+          "namespace": "External"
+        },
+        {
+          "name": "Attribute",
+          "value": "transcribeVoicemail",
+          "key": "transcribeVoicemail",
+          "namespace": "External"
+        },
+        {
+          "name": "Attribute",
+          "value": "saveCallRecording",
+          "key": "saveCallRecording",
+          "namespace": "External"
+        },
+        {
+          "name": "Attribute",
+          "value": "agentName",
+          "key": "agentName",
+          "namespace": "External"
+        },
+        {
+          "name": "Attribute",
+          "value": "encryptVoicemail",
+          "key": "encryptVoicemail",
+          "namespace": "External"
+        },
+        {
+          "name": "Attribute",
+          "value": "transferMessage",
+          "key": "transferMessage",
+          "namespace": "External"
+        }
+      ],
+      "metadata": {
+        "position": {
+          "x": 324,
+          "y": 148
+        },
+        "dynamicParams": [
+          "agentId",
+          "transcribeVoicemail",
+          "saveCallRecording",
+          "agentName",
+          "encryptVoicemail",
+          "transferMessage"
+        ]
+      },
+      "type": "SetAttributes"
+    }
+  ],
+  "metadata": {
+    "entryPointPosition": {
+      "x": 15,
+      "y": 24.825154236907274
+    },
+    "snapToGrid": false,
+    "name": "Transfer_to_VM",
+    "status": "published",
+    "hash": "19c21bbc74431f0e7fd2f9cfba5583196bc4e1052e0cb26e258641d04441f188"
+  },
+  "settings": {
+    "inputParameters": [],
+    "outputParameters": [],
+    "branches": [
+      {
+        "displayName": "Success",
+        "referenceName": "Success",
+        "description": ""
+      },
+      {
+        "displayName": "Error",
+        "referenceName": "Error",
+        "description": ""
+      }
+    ]
+  }
+}
